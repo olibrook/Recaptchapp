@@ -8,9 +8,9 @@ from google.appengine.api import urlfetch
     Version 0.1
 """
 
-API_SSL_SERVER  ="https://api-secure.recaptcha.net"
-API_SERVER      ="http://api.recaptcha.net"
-VERIFY_SERVER   ="api-verify.recaptcha.net"
+API_SSL_SERVER = "https://www.google.com/recaptcha/api"
+API_SERVER = "http://www.google.com/recaptcha/api"
+VERIFY_SERVER = "http://www.google.com/recaptcha/api/verify"
 
 class RecaptchaResponse(object):
     def __init__(self, is_valid, error_code=None):
@@ -80,7 +80,7 @@ def submit (recaptcha_challenge_field,
 	    })
 
     httpresp = urlfetch.fetch(
-                   url      = "http://%s/verify" % VERIFY_SERVER,
+                   url      = VERIFY_SERVER,
                    payload  = params,
                    method   = urlfetch.POST,
                    headers  = headers
