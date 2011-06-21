@@ -1,0 +1,1 @@
+<script>var RecaptchaOptions = {{recaptcha_options_json|safe}};</script>
