@@ -1,5 +1,6 @@
 import urllib
 from google.appengine.api import urlfetch
+from django.utils.encoding import smart_str #TODO: we shouldn't need to use this
 
 """
     Adapted from http://pypi.python.org/pypi/recaptcha-client
@@ -72,9 +73,11 @@ def submit (recaptcha_challenge_field,
                "User-agent"  :  "reCAPTCHA GAE Python"
                }         
     
+    recaptcha_response_field = smart_str(recaptcha_response_field) #TODO: we should be able to just do recaptcha_response_field.encode('utf-8') here
+
     params = urllib.urlencode ({
 	    'privatekey': private_key,
-        'remoteip' : remoteip,
+            'remoteip' : remoteip,
 	    'challenge': recaptcha_challenge_field,
 	    'response' : recaptcha_response_field,
 	    })
