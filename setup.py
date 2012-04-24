@@ -6,8 +6,8 @@ DESCRIPTION = 'This Django application simplifies adding a captcha to a model or
 LONG_DESCRIPTION = open(os.path.join(HERE, 'README.md')).read()
 
 setup(
-	name='recaptchapp',
-	version='0.1',
+    name='recaptchapp',
+    version='0.1',
     packages=find_packages(),
     author='Potato London',
     url='https://github.com/potatolondon/Recaptchapp',
